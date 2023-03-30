@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi Perfil</ion-title>
+    <ion-button (click)="close()" size="small" fill="clear" slot="end">
+      <ion-icon name="close-circle"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="main_content_div">
+    <div class="user_back bg_image" [style.backgroundImage]="'https://i.pravatar.cc/385'">
+      <div class="white_div">
+        <ion-icon name="camera-outline"></ion-icon>
+      </div>
+    </div>
+    <div class="main_flex_div">
+      <div class="second_flex">
+        <ion-label class="f_lbl">Nombre:</ion-label>
+        <ion-label class="s_div">{{datos.nombre}}</ion-label>
+  
+      </div>
+    </div>
+    <div class="main_flex_div">
+      <div class="second_flex">
+        <ion-label class="f_lbl">Apellido Paterno:</ion-label>
+        <ion-label class="s_lbl">Create</ion-label>
+      </div>
+    </div>
+    <div class="main_flex_div">
+      <div class="second_flex">
+        <ion-label class="f_lbl">Apellido Materno:</ion-label>
+        <ion-label class="s_lbl">Create</ion-label>
+      </div>
+    </div>
+    <div class="main_flex_div">
+      <div class="second_flex">
+        <ion-label class="f_lbl">Contraseña:</ion-label>
+        <ion-label class="s_lbl">Create</ion-label>
+      </div>
+    </div>
+    <div class="main_flex_div">
+      <div class="second_flex">
+        <ion-label class="f_lbl">Correo Electrónico:</ion-label>
+        <ion-label class="s_lbl">Create</ion-label>
+      </div>
+    </div>
+    <div class="container-login100-form-btn">
+      <!--<ion-button color="success" (click)="goToHome()">Iniciar Sesión</ion-button>-->
+      <ion-button class="user_back" color="success" (click)="goToEditProfile()">Editar</ion-button>
+    </div>
+  </div>
+    <!--
+    <div class="main_flex_div" *ngFor="let item of menu; let i = index">
+      <div class="first_flex">
+        <img src="{{item.img}}" alt="">
+      </div>
+      <div class="second_flex">
+        <ion-label class="f_lbl">{{item.name}}</ion-label>
+        <ion-label class="s_lbl">{{item.name2}}</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>-->
+</ion-content>

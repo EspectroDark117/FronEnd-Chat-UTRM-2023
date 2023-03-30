@@ -1,0 +1,160 @@
+ion-toolbar{
+    ion-button{
+        color: lightgray;
+
+        ion-icon{
+            font-size: 20px;
+        }
+    }
+}
+
+.main_content_div{
+    width: 100%;
+    padding: 16px;
+
+    ion-label {
+        display: block;
+    }
+
+    .user_back{
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        border: 5px solid white;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
+        display: block;
+        margin: auto;
+        background-position: top;
+        position: relative;
+
+        .white_div{
+            height: 35px;
+            width: 35px;
+            background: white;
+            border-radius: 100%;
+            box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+
+            ion-icon{
+                font-size: 20px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                color: var(--ion-color-primary);
+            }
+        }
+    }
+
+    .profile_pic_flex{
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        .small_user{
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            background-position: top;
+            margin-left: -10px;
+            border: 4px solid white;
+        }
+    }
+
+    .btn_div{
+        text-align: center;
+        margin-top: 10px;
+        ion-button{
+            height: 40px;
+        }
+    }
+
+    .invite_div{
+        margin-top: 15px;
+        padding: 13px;
+        border-radius: 5px;
+        display: flex;
+        position: relative;
+        background: rgba(0, 141, 247,0.1);
+        align-items: center;
+        margin-bottom: 20px;
+        img{
+            width: 30px;
+        }
+
+        .lbls{
+            padding-left: 10px;
+
+            .bold_lbl{
+                font-weight: 500;
+            }
+            .simple_lbl{
+                font-size: 13px;
+                color: gray;
+            }
+        }
+
+        ion-icon{
+            position: absolute;
+            right: 10px;
+            color: gray;
+        }
+    }
+
+    .pref_lbl{
+        color: #505005;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .main_flex_div{
+        display: flex;
+        align-items: center;
+        position: relative;
+
+       .first_flex{
+           display: flex;
+           align-items: center;
+           margin-top: 5px;
+           margin-bottom: 5px;
+           img{
+               width: 35px;
+               min-width: 35px;
+           }
+
+           .back_image{
+                width: 35px;
+                min-width: 35px;
+                height: 35px;
+                border-radius: 100%;
+           }
+       }
+       .second_flex{
+            width: 100%;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid lightgray;
+            height: 55px;
+
+            .f_lbl {
+                font-size: 15px;
+            }
+
+            .s_lbl {
+                font-size: 15px;
+                padding-right: 15px;
+                color: gray;
+            }
+            ion-icon{
+                position: absolute;
+                right: 0;
+                color: gray;
+            }
+       }
+    }
+}

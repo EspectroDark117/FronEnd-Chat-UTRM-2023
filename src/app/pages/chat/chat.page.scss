@@ -1,0 +1,74 @@
+ion-content {
+    ion-list {
+        background: transparent;
+    }
+}
+
+ion-content {
+    //--background: #e1eef5;
+}
+
+// .back{
+//     --background: #e1eef5;
+// }
+
+// .backImage{
+//     --background: url('/assets/imgs/nature1.jpg');
+// }
+
+.main_content_div {
+    width: 100%;
+    padding: 15px;
+}
+
+.left_div {
+    width: 100%;
+    margin-bottom: 15px;
+
+    .inner_div {
+        width: 70%;
+    }
+
+    .msg_div {
+        background: white;
+        padding: 10px 15px;
+        border-radius: 10px;
+        border-bottom-left-radius: 0px;
+        width: fit-content;
+    }
+}
+
+.right_div {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+    justify-content: flex-end;
+
+
+    .inner_div {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .msg_div {
+        background: #1F978F;
+        padding: 10px 15px;
+        border-radius: 10px;
+        color: white;
+        border-bottom-right-radius: 0px;
+    }
+}
+
+
+ion-footer {
+    ion-toolbar {
+        padding: 0 3px;
+        ion-textarea {
+            border: 1px solid var(--ion-color-medium);
+            border-radius: 20px;
+            margin: 0.5vh 0;
+        }
+    }
+}
