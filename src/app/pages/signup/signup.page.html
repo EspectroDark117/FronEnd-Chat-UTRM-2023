@@ -1,0 +1,108 @@
+<ion-content [fullscreen]="true">
+  <!-- <ion-spinner color="danger" class="ion-text-center" name="crescent" *ngIf="isLoading"></ion-spinner> -->
+  <div class="circleBase type2 circle1"></div>
+  <div class="circleBase type1"></div>
+  <div class="circleBase type2 circle2"></div>
+
+  <ion-label class="welcomeMessage">
+    <ion-text color="light">Hola,</ion-text>
+    <ion-text color="light">
+      <p>Registrate!</p>
+    </ion-text>
+  </ion-label>
+
+  <ion-icon name="arrow-back-outline" color="danger" class="backButton" routerLink="/login">
+  </ion-icon>
+
+  <form method="post" [formGroup]="formW">
+    <ion-list lines="none" class="ion-margin ion-padding ion-text-center">
+      <!--Nombre-->
+      <ion-item class="ion-margin-vertical">
+        <ion-icon name="person-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input formControlName="nombre" placeholder="Ingrese su nombre">
+        </ion-input>
+      </ion-item>
+      <ion-text class="ion-text-left" color="danger" *ngIf="!formW.get('nombre') && formW.get('nombre')">
+        <p class="error">*Por favor ingrese su usuario</p>
+      </ion-text>
+
+      <!--apellido paterno-->
+      <ion-item class="ion-margin-vertical">
+        <ion-icon name="person-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input formControlName="apellido_p" placeholder="Ingrese su apellido paterno">
+        </ion-input>
+      </ion-item>
+      <ion-text class="ion-text-left" color="danger" *ngIf="!formW.get('apellido_p') && formW.get('apellido_p')">
+        <p class="error">*Por favor su apellido paterno</p>
+      </ion-text>
+
+      <!--apellido materno-->
+      <ion-item class="ion-margin-vertical">
+        <ion-icon name="person-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input formControlName="apellido_m" placeholder="Ingrese su apellido materno">
+        </ion-input>
+      </ion-item>
+      <ion-text class="ion-text-left" color="danger" *ngIf="!formW.get('apellido_m') && formW.get('apellido_m')">
+        <p class="error">*Por favor ingrese su apellido materno</p>
+      </ion-text>
+
+      <!--correo email-->
+      <ion-item class="ion-margin-vertical">
+        <ion-icon name="mail-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input formControlName="correo" placeholder="Ingrese su correo electronico">
+        </ion-input>
+      </ion-item>
+      <ion-text class="ion-text-left" color="danger" *ngIf="!formW.get('correo') && formW.get('correo')">
+        <p class="error">*Por favor ingrese su correo electronico</p>
+      </ion-text>
+
+      <!--contraseña-->
+      <ion-item class="ion-margin-vertical">
+        <ion-icon (click)="onChange()" [name]="isTypePassword ? 'lock-closed-outline' : 'lock-open-outline'" slot="end"
+          [color]="isTypePassword ? 'medium' : 'primary'">
+        </ion-icon>
+        <ion-input formControlName="pass" [type]="isTypePassword ? 'password' : 'text'"
+          placeholder="Ingrese su contraseña">
+        </ion-input>
+      </ion-item>
+      <ion-text class="ion-text-left" color="danger" *ngIf="!formW.get('pass') && formW.get('pass')">
+        <p class="error" *ngIf="formW.get('pass') && formW.get('pass')">
+          *Por favor ingrese su contraseña
+        </p>
+        <p class="error" *ngIf="formW.get('pass')">
+          *Su contraseña debe tener minimo 8 caracteres
+        </p>
+      </ion-text>
+
+      <!--foto-->
+      <ion-item class="ion-margin-vertical">
+        <ion-icon name="color-palette-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input formControlName="foto" placeholder="Ingrese URL de cualquier foto">
+        </ion-input>
+      </ion-item>
+      <ion-text class="ion-text-left" color="danger" *ngIf="!formW.get('foto') && formW.get('foto')">
+        <p class="error">*Ingresa cualquier URL de foto</p>
+      </ion-text>
+
+      <ion-row class="ion-margin-vertical">
+        <ion-col size="12" class="alignItems">
+          <div align=left>
+            <ion-checkbox></ion-checkbox>
+            <ion-note>Acepte los <ion-text color="primary" routerLink="">terminos y condiciones</ion-text> y venda su
+              alma</ion-note>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-button *ngIf="!isLoading" color="primary" shape="round" (click)="createUser()"
+        routerLink="/login">Registrarse</ion-button>
+      <ion-button fill="clear" *ngIf="isLoading">
+        <ion-spinner name="crescent" color="primary"></ion-spinner>
+      </ion-button>
+    </ion-list>
+  </form>
+</ion-content>

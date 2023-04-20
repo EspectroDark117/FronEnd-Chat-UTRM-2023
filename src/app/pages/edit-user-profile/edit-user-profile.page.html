@@ -1,0 +1,42 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+    <ion-button (click)="close()" size="small" fill="clear" slot="end">
+      <ion-icon name="close-circle"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="user_back bg_image" [style.backgroundImage]="''"></div>
+    <ion-button expand="block" fill="clear" style="font-size: 15px;">
+      CHANGE PROFILE PICTURE
+    </ion-button>
+
+    <div class="form_div">
+      <ion-item>
+        <ion-label position="floating">Full Name</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Username/Hello ID</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Birth Date</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Bio</ion-label>
+        <ion-textarea></ion-textarea>
+      </ion-item>
+    </div>
+
+
+  </div>
+</ion-content>

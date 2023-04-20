@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let message of respuesta" 
+  [class.left_div]="message.id_usuario_env === receiver"
+  [class.right_div]="message.id_usuario_env === id_usuario_env">
+    <div class="main_content_div">
+      <span>
+        <div>
+          <div class="inner_div">
+            <div class="msg_div">
+              <ion-card-content>{{message.message}}</ion-card-content>
+            </div>
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</ion-content>
+<!--
+<ion-content>
+
+ <ion-list 
+  lines="none" 
+  *ngIf="(chats) as chat$">
+  <ion-item-group class="chats-group" *ngFor="let chat of chat$">
+    <app-chat-box [chat]="chat" [current_user_id]="currentUserId"></app-chat-box>
+  </ion-item-group>
+</ion-list>
+
+</ion-content>
+-->
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-textarea autoGrow rows="1" placeholder="Envia un mensaje" class="ion-text-center" [(ngModel)]="messageText">
+    </ion-textarea>
+    <ion-buttons slot="end">
+      <ion-fab-button *ngIf="!isLoading" size="small" color="primary" (click)="sendMessage()">
+        <ion-icon name="send"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button *ngIf="isLoading" size="small" color="primary">
+        <ion-spinner name="crescent" color="white"></ion-spinner>
+      </ion-fab-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

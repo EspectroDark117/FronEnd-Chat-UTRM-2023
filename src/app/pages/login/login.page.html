@@ -1,0 +1,78 @@
+<ion-content [fullscreen]="true">
+  <div class="circleBase type2 circle1"></div>
+  <div class="circleBase type1"></div>
+  <div class="circleBase type2 circle2"></div>
+
+  <ion-label class="welcomeMessage">
+    <ion-text color="light"><h1>Bienvenido a su chatXD</h1></ion-text> 
+    <ion-text color="light">
+      <p>Iniciar sesion</p>
+    </ion-text>
+  </ion-label> 
+
+  <form [formGroup]="formLogin">
+    <ion-list lines="none" class="ion-margin ion-padding ion-text-center">
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="mail-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input 
+          formControlName="correo" 
+          placeholder="Ingrese su correo electronico">
+        </ion-input>
+      </ion-item>
+      <ion-text 
+        class="ion-text-left"
+        color="danger"
+        *ngIf="!formLogin.get('correo') && formLogin.get('correo')">
+        <p class="error">*Por favor ingrese su correo electronico</p>
+      </ion-text>
+
+      <ion-item class="ion-margin-vertical">
+        <ion-icon (click)="onChange()"
+          [name]="isTypePassword ? 'lock-closed-outline' : 'lock-open-outline'" 
+          slot="end" 
+          [color]="isTypePassword ? 'medium' : 'primary'">
+        </ion-icon>
+        <ion-input 
+          formControlName="pass" 
+          [type]="isTypePassword ? 'password' : 'text'"
+          placeholder="Ingrese su contraseña">
+        </ion-input>
+      </ion-item>
+      <ion-text 
+        class="ion-text-left"
+        color="danger"
+        *ngIf="!formLogin.get('pass') && formLogin.get('pass')">
+        <p 
+          class="error" 
+          *ngIf="formLogin.get('pass') && formLogin.get('pass')">
+          *Por favor ingrese su contraseña
+        </p>
+        <p 
+          class="error" 
+          *ngIf="formLogin.get('pass')">
+          *La contraseña tiene que tener 8 caracteres
+        </p>
+      </ion-text>
+
+      <ion-row class="ion-margin-vertical">
+        <ion-col size="6" class="alignItems">
+          <div align=left>
+          </div>
+        </ion-col>
+
+      </ion-row>
+      <!-- <ion-button color="primary" shape="round" (click)="onSubmit()">Log In</ion-button> -->
+      <ion-button *ngIf="!isLogin" color="primary" shape="round" (click)="login()">Ingresa</ion-button>
+      <ion-button fill="clear" *ngIf="isLogin">
+        <ion-spinner name="crescent" color="primary"></ion-spinner>
+      </ion-button>
+      <p class="signup">
+        <ion-note>
+          No tienes cuenta? <ion-text routerLink="../signup" color="primary">Registrate</ion-text>
+        </ion-note>
+      </p>
+    </ion-list>
+  </form>
+</ion-content>
